@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Playball&family=Sofia&family=Staatliches&display=swap');
+body {
+    color: rgb(8, 68, 77);
+    overflow-x: hidden;
+}
+.text-light {
+    color: rgb(8, 68, 77, .7) !important;
+}
+.text-sml {
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 5px;
+    font-weight: 600;
+    font-family: "Playball", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+.productrow .hd {
+    font-size: 38px;
+    text-align: center ;
+    font-family: "Playball", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+.viewallbtn svg {
+    font-size: 19px;
+    padding-left: 5px;
+}
+.productitem {
+    height: 570px;
+    width: 320px;
+    /* border: 1px solid rgb(143, 113, 95, .4); */
+    cursor: pointer;
+    position: relative;
+    /* border: 2px solid black; */
+    border: 1px solid lightgrey;
+}
+.productitem .badge {
+    display: block;
+    padding: 5px 8px;
+    position: absolute;
+    top: 2%;
+    background-color: rgba(240, 112, 0);
+    z-index: 100;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+}
+.productitem .imgwrapper{
+    position: relative;
+    border-bottom: 1px solid lightgrey;
+}
+.productitem .imgwrapper img {
+    height: 460px !important;
+    width: 100% !important;
+    /* border: 2px solid black; */
+}
+
+.productitem h4 {
+    font-size: 19px;
+    font-weight: 600;
+    color: black !important;
+}
+.productitem .info {
+    padding-top: 20px;
+    /* text-align: center; */
+}
+.productitem .info .oldprice {
+    font-size: 19px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.4);
+    text-decoration: line-through;
+}
+.productitem .info .netprice {
+    font-size: 21px;
+    font-weight: bold;
+    margin-left: 10px;
+    color: rgb(8, 68, 77);
+}
+.productitem .action {
+    position: absolute;
+    top: 89%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+}
+.productitem .action button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 320px !important;
+    height: 50px !important;
+    width: 320px !important;
+    border: 1px solid rgb(143, 113, 95, .3) !important;
+    background-color: rgb(255, 255, 255, .8);
+    border-radius: 0%;
+    transition: 0.0s all !important;
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+}
+/* .productitem .action img {
+    top: 100%;
+} */
+/* .productitem .action button:hover {
+    background-color: rgba(240, 112, 0, .5);
+}
+.productitem .imgwrapper {
+    overflow: hidden;
+}
+.productitem .imgwrapper:hover .action .button {
+    opacity: 1;
+    z-index: 0;
+} */
+.productitem:hover .imgwrapper .action {
+    opacity: 1;
+}
+.productitem .changeimg {
+    opacity: 0;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: -1;
+    transition: all .4s ease-in-out;
+}
+.productitem .imgwrapper:hover .changeimg {
+    opacity: 1;
+    z-index: 0;
+}
+.swiper-button-prev {
+    position: absolute;
+    left: 0px !important;
+    height: 40px !important;
+    width: 40px !important;
+    border-radius: 50% !important;
+    z-index: 100 !important;
+    box-shadow: 0 3px 6px rgb(0,0,0,0.16), 0 3px 6px rgb(0,0,0,0.23) !important;
+    color: rgb(8, 68, 77);
+    background-color: white;
+    /* opacity: 0 !important; */
+}
+.swiper-button-prev:after {
+    content: 'prev';
+    font-size: 20px !important;
+}
+.swiper-button-next {
+    height: 40px !important;
+    width: 40px !important;
+    border-radius: 50% !important;
+    z-index: 100 !important;
+    box-shadow: 0 3px 6px rgb(0,0,0,0.16), 0 3px 6px rgb(0,0,0,0.23) !important;
+    color: rgb(8, 68, 77);
+    background-color: white;
+    /* opacity: 0 !important; */
+}
+.swiper-button-next {
+    right: 0px !important;
+}
+.swiper-button-next:after {
+    content: 'next';
+    font-size: 20px !important;
+}
+.bannersection {
+    gap: 30px;
+    position: relative;
+}
+.bannersection .banner img {
+    margin-top: 50px;
+    height: 350px;
+    width: 710px !important;
+    /* cursor: pointer; */
+}
+.bannersection .banner .info {
+    position: absolute;
+}
+.bannersection .banner .info1 {
+    top: 38%;
+    left: 22%;
+}
+.bannersection .banner .info1 h2 {
+    text-align: center;
+    font-size: 55px;
+    font-family: "Playball", cursive;
+    font-weight: 400;
+    font-style: normal;
+    opacity: .8;
+}
+.bannersection .banner .info2 {
+    top: 38%;
+    left: 83%;
+}
+.bannersection .banner .info2 h2 {
+    text-align: center;
+    font-size: 28px;
+    font-family: "Playball", cursive;
+    font-weight: 400;
+    font-style: normal;
+    opacity: .8;
+}
+.bannersection .banner .info2 h1 {
+    text-align: center;
+    font-size: 55px;
+    font-family: "Playball", cursive;
+    font-weight: 400;
+    font-style: normal;
+    opacity: .8;
+}
+
+
+.newsletter {
+    height: 450px;
+    width: 100%;
+    background: url('../../asset//image/newsletter.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 50px;
+}
+.newsletter h2 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.newsletter p.text-light {
+    color: white !important;
+    opacity: .5;
+    text-align: center;
+    font-size: 18px;
+}
+.newsletter form {
+    height: 50px;
+    width: 40%;
+    background-color: white;
+    padding: 5px;
+    position: relative;
+    margin-left: 395px;
+    border-radius: 5px;
+}
+.newsletter form svg {
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    font-size: 36px;
+    opacity: .8;
+}
+.newsletter form input {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    outline: none;
+    border: 0px !important;
+    padding-left: 50px;
+    padding-right: 150px;
+    font-size: 17px;
+}
+.newsletter form .subscribe {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background-color: rgb(8, 68, 77, .9);
+    color: white;
+    width: 130px;
+    height: auto;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: bold;
+    padding-top: 5px;
+}

@@ -1,0 +1,35 @@
+.contactsection {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.contactsection h1 {
+    margin: 30px;
+    font-size: 45px;
+    font-weight: 400;
+}
+.contactsection .info h2 {
+    font-size: 30px;
+    font-weight: 400;
+}
+.contactsection .info ul li {
+    margin-bottom: 15px;
+    color: rgb(8, 68, 77) !important;
+}
+.contactsection .info ul li a {
+    margin-bottom: 15px;
+    color: rgb(8, 68, 77) !important;
+}
+.contactsection .info ul li svg {
+    margin-right: 15px;
+    color: rgb(8, 68, 77) !important;
+    font-size: 20px;
+}
+.contactsection .img {
+    height: 430px;
+    width: 650px;
+}
+.contactsection .img img {
+    height: 100%;
+    width: 100%;
+}

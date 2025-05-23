@@ -1,0 +1,51 @@
+.loginpage {
+    margin: 50px 140px;
+}
+.loginpage .card {
+    width: 600px;
+    padding: 30px;
+    border-radius: 0px;
+    box-shadow: 0 3px 6px rgb(0,0,0,0.16), 0 3px 6px rgb(0,0,0,0.23) !important;
+    background-color: #ffebe2;
+}
+.loginpage .card h4 {
+    font-size: 22px;
+    font-weight: 300;
+}
+.loginpage .card h3 {
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+.loginpage .card input {
+    font-size: 16px !important;
+}
+.loginpage .card .visible {
+    position: absolute;
+    top: 13px;
+    right: 50px;
+    z-index: 100;
+    font-size: 18px;
+    min-width: 50px !important;
+    height: 30px;
+    width: 30px;
+    border-radius: 100% !important;
+    color: rgb(170, 170, 170);
+}
+.loginpage .MuiFormControl-root {
+    width: 500px !important;
+    border-radius: 0px !important;
+}
+.loginpage .MuiFormControl-root .MuiInputBase-root {
+    border-radius: 0px !important;
+}
+.loginpage .signinimg {
+    margin: 0px;
+    padding: 0px;
+    height: 750px !important;
+    width: 610px !important;
+    box-shadow: 0 3px 6px rgb(0,0,0,0.16), 0 3px 6px rgb(0,0,0,0.23) !important;
+}
+.loginpage .signinimg img {
+    height: 750px;
+    width: 610px;
+}

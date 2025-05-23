@@ -1,0 +1,216 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Playball&family=Sofia&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Pacifico&family=WindSong:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&family=Limelight&family=Mr+Dafoe&family=Pacifico&family=WindSong:wght@400;500&display=swap');
+.homeslidebar {
+    padding: 30px 0px;
+    margin-bottom: 60px;
+}
+.homeslidebar * {
+    outline: none;
+}
+.item {
+    height: auto !important;
+}
+.item img {
+    height: 100%;
+}
+.homeslider {
+    /* border-radius: 30px; */
+    overflow: hidden;
+    position: relative;
+}
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    height: 50px !important;
+    width: 50px !important;
+    border-radius: 50% !important;
+    z-index: 100 !important;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 3px 6px rgb(0,0,0,0.16), 0 3px 6px rgb(0,0,0,0.23) !important;
+}
+.slick-arrow.slick-next {
+    right: 4% !important;
+}
+.slick-arrow.slick-prev {
+    left: 4% !important;
+}
+.slick-prev:before {
+    content: '←' !important;
+    font-family: FontAwesome !important;
+    font-size: 30px !important;
+    /* font-weight: 800 !important; */
+}
+.slick-next:before {
+    content: '→' !important;
+    font-family: FontAwesome !important;
+    font-size: 30px !important;
+}
+.slick-arrow:hover {
+    background-color: rgb(8, 68, 77, .7) !important;
+    opacity: 1;
+}
+.homeslider .slick-dots {
+    position: absolute;
+    bottom: 40px;
+}
+.homeslider .slick-dots button::before {
+    height: 10px !important;
+    width: 10px !important;
+    font-size: 10px !important;
+}
+.slick-active button::before{
+    color: rgb(8, 68, 77) !important;
+}
+.homeslider .item {
+    position: relative;
+}
+.homeslider .item .info {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    color: rgb(0, 0, 0);
+}
+.homeslider .item .info h2 {
+    padding-left: 10px;
+    font-size: 100px;
+    font-family: "Merriweather", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+.homeslider .item .info p {
+    font-size: 34px;
+    padding-left: 50px;
+    font-family: "Playball", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+/* .homeslider .item .info1 button {
+    top: 80px;
+    left: 34%;
+    width: 180px;
+    background-color: #08444D;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 30px;
+    color: white;
+    font-weight: 600;
+} */
+.homeslider .item .info1 button:hover {
+    background-color: rgb(8, 68, 77, .8);
+}
+.homeslidebar .item .info2 {
+    top: 30%;
+    left: 25%;
+    text-align: center;
+}
+.homeslider .item .info2 h2 {
+    font-size: 60px;
+    font-family: "Merriweather", serif;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 40px;
+}
+.homeslider .item .info2 h1 {
+    font-size: 140px;
+    color: rgb(8, 68, 77);
+    font-family: "Limelight", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    /* line-height: 150px; */
+}
+.homeslider .item .info2 p {
+    font-size: 40px;
+    font-family: "Coiny", system-ui;
+    font-weight: 600;
+    font-style: normal;
+    color: black;
+    line-height: 20px;
+    padding-right: 50px;
+}
+.homeslider .item .info2 button {
+    top: 50px;
+    width: 180px;
+    background-color: rgb(8, 68, 77);
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 30px;
+    color: white;
+    font-weight: 600;
+}
+.homeslider .item .info2 button:hover {
+    background-color: rgb(8, 68, 77, .8);
+}
+.homeslider .item .info3 {
+    top: 20%;
+}
+.homeslider .item .info3 h2 {
+    font-size: 80px;
+    text-align: center;
+}
+.homeslider .item .info3 button {
+    top: 20px;
+    left: 34%;
+    width: 180px;
+    background-color: #08444D;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 30px;
+    color: white;
+    font-weight: 600;
+}
+/* .homeslider .item .info3 button:hover {
+    background-color: rgb(8, 68, 77, .8);
+} */
+.homeslider .item .info4 {
+    top: 20%;
+    left: 33%;
+}
+.homeslider .item .info4 h2 {
+    font-size: 60px;
+    text-align: center;
+    font-family: "Playball", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+.homeslider .item .info4 h1 {
+    font-size: 110px;
+    color: rgb(8, 68, 77);
+    text-align: center;
+    font-family: "Playball", cursive;
+    font-weight: 400;
+    font-style: normal;
+    /* line-height: 150px; */
+}
+.homeslider .item .info4 p {
+    font-size: 40px;
+    color: black;
+    line-height: 20px;
+    padding-right: 50px;
+    padding-left: 125px;
+}
+.homeslider .item .info5 {
+    top: 20%;
+    left: 28%;
+}
+.homeslider .item .info5 h1 {
+    font-size: 110px;
+    color: rgb(8, 68, 77);
+    text-align: center;
+    font-family: "Playball", cursive;
+    font-weight: 400;
+    font-style: normal;
+    /* line-height: 150px; */
+}
+.homeslider .item .info5 p {
+    font-size: 35px;
+    color: black;
+    line-height: 20px;
+    padding-top: 30px;
+    padding-right: 50px;
+    padding-left: 30px;
+}

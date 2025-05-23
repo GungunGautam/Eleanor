@@ -1,0 +1,9 @@
+.productlisting {
+    display: flex;
+    gap: 53px;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
+.productlisting .productitem.four {
+    /* width: 22.2%; */
+}

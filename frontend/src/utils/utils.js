@@ -1,0 +1,1 @@
+export const isUserLogin = () => (localStorage.getItem("token") ? true : false)

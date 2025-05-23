@@ -1,0 +1,23 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+  padding: 0px;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container-fluid {
+  padding: 0px 35px;
+}
+.cursor {
+  cursor: pointer;
+}
+.bg-g, .bg-success {
+  background-color: rgb(8, 68, 77, 0.7) !important;
+}
+.text-g {
+  color: rgb(8, 68, 77);
+}
+.text-org {
+  color: orangered;
+}

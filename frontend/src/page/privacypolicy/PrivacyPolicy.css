@@ -1,0 +1,39 @@
+.privacypolicysection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.privacypolicysection .info {
+    padding: 20px 50px;
+    /* color: black; */
+}
+.privacypolicysection .info h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+.privacypolicysection .info h2 {
+    padding-top: 10px;
+    font-weight: 400;
+    font-size: 33px;
+}
+.privacypolicysection .info h3 {
+    padding-top: 10px;
+    font-weight: 400;
+    font-size: 28px;
+}
+.privacypolicysection .info p {
+    padding-top: 10px;
+    font-size: 17px;
+}
+.privacypolicysection .info ul {
+    margin: 30px 10px 20px;
+    list-style: disc;
+}
+.privacypolicysection .info ul li {
+    margin: 15px;
+    list-style: disc;
+    font-size: 17px;
+}

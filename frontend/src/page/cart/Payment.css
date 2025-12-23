@@ -1,0 +1,88 @@
+/* Page wrapper */
+.payment-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Page title */
+.payment-container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #08444d;
+}
+
+/* Payment card */
+.payment-box {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+/* Section heading */
+.payment-box h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* Order item row */
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Price text */
+.summary-item span:last-child {
+  font-weight: 600;
+}
+
+/* Total section */
+.payment-box h4,
+.payment-box h3:last-of-type {
+  margin-top: 15px;
+  font-size: 22px;
+  color: #08444d;
+}
+
+/* Pay button */
+.payment-container button {
+  border-radius: 6px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Razorpay note */
+.payment-container p {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* Divider */
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 15px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .payment-container {
+    margin: 20px;
+    padding: 10px;
+  }
+
+  .summary-item {
+    font-size: 14px;
+  }
+}

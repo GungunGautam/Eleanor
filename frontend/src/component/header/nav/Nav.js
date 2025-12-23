@@ -1,20 +1,20 @@
 import React from 'react';
 import '../nav/Nav.css';
 import Button from '@mui/material/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown, faHeadphonesAlt, faTableCellsLarge } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faCaretDown, faHeadphonesAlt, faTableCellsLarge } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
-import { colors } from '@mui/material';
+// import { colors } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { fetchdatafromapi } from '../../../utils/Api';
-import { useContext } from 'react';
-import { myContext } from '../../../App';
+// import { useContext } from 'react';
+// import { myContext } from '../../../App';
 
 function Nav(props) {
 
   const [productdata,  setproductdata] = useState([]);
   const [categorydata, setcategorydata] = useState([]);
-  const naviagte = useNavigate()
+  const navigate = useNavigate()
   console.log("categorydata", categorydata)
   useEffect(() => {
 
@@ -39,16 +39,16 @@ function Nav(props) {
                 <li className='list-inline-item'>
                   <Button><Link to={'/'}>Shop All</Link></Button>
                 </li>
-                {
-                  categorydata?.length && categorydata?.map((item, index) => {
-                    return (
-                      <li className='list-inline-item position-static'>
-                        <Button onClick={() => `naviagte(/category/${item?.name})`}><Link>{item.name}</Link></Button>
-                      </li>
-                      
-                    )
-                  })
-                }
+                {categorydata?.length > 0 &&
+  categorydata.map((item, index) => (
+    <li className='list-inline-item position-static' key={index}>
+      <Button component={Link} to={`/category/${item.name}`}>
+        {item.name}
+      </Button>
+    </li>
+  ))
+}
+
 
               </ul>
             </nav>

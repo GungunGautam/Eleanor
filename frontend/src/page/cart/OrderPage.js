@@ -6,7 +6,6 @@ import '../cart/Cart.css';
 import Quantitybox from '../../component/quantitybox/Quantitybox';
 import { Maximize } from '@mui/icons-material';
 import QuantityboxCart from '../../component/quantitybox/Quantitybox';
-import Payment from '../home/Payment';
 import Header from '../../component/header/Header';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCountCart } from '../../redux/actions';
@@ -107,7 +106,7 @@ function OrderPage() {
                                             
                                         </div>
                                     </td>
-                                    <td style={{fontSize:'19px', color:'red', opacity: ".7"}}><FontAwesomeIcon icon={faIndianRupee}/> 20,000</td>
+                                    <td style={{fontSize:'19px', color:'red', opacity: ".7"}}><FontAwesomeIcon icon={faIndianRupee}/> {item.newprice}</td>
                                 </tr>
                                         )
                                     })
@@ -133,7 +132,7 @@ function OrderPage() {
 
                                 <br/>
                                 
-                             <Button className='hoverbtn' style={{width: "100%", backgroundColor: "rgb(8, 68, 77)", padding: "10px", color: "white", fontSize: "18px", textTransform: "capitalize"}} onClick={() => navigate('/thankyou')}>Place Order</Button>
+                             <Button className='hoverbtn' style={{width: "100%", backgroundColor: "rgb(8, 68, 77)", padding: "10px", color: "white", fontSize: "18px", textTransform: "capitalize"}} onClick={() => navigate('/payment')}>Place Order</Button>
                                 
                                 <div className='d-flex align-items-center'>
                                     

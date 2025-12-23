@@ -6,7 +6,7 @@ import '../cart/Cart.css';
 import Quantitybox from '../../component/quantitybox/Quantitybox';
 import { Maximize } from '@mui/icons-material';
 import QuantityboxCart from '../../component/quantitybox/Quantitybox';
-import Payment from '../home/Payment';
+import Payment from './Payment';
 import Header from '../../component/header/Header';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCountCart } from '../../redux/actions';

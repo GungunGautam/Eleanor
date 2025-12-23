@@ -1,29 +1,27 @@
-import React from 'react'
-import { Button } from '@mui/material'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from "react";
+import Header from "../../component/header/Header";
 
 function Thankyou() {
-    return (
-        <>
 
-            <div className='container-fluid w-100'>
-                <div className='row'>
-                    <div className='col  d-flex align-items-center justify-content-center'>
-                        <div className='thankpage d-flex align-items-center justify-content-center'>
-                            <div className='thankyousection shadow'>
-                                <div className='img'>
-                                    <img src={require('../../asset/image/thankyou.png')} />
+  useEffect(() => {
+    const email = localStorage.getItem("email");
+    const cartData = JSON.parse(localStorage.getItem("productArr"));
 
-                                    <Link to={'/'} ><Button>Go Back</Button></Link>
+    if (cartData && email) {
+      delete cartData[email];   // remove user's cart
+      localStorage.setItem("productArr", JSON.stringify(cartData));
+    }
+  }, []);
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </>
-    )
+  return (
+    <>
+      <Header />
+      <div style={{ textAlign: "center", marginTop: "80px" }}>
+        <h2>Thank You for Your Order!</h2>
+        <p>Your payment was successful.</p>
+      </div>
+    </>
+  );
 }
 
-export default Thankyou
+export default Thankyou;

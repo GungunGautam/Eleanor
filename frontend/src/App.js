@@ -1,11 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import './App.css';
-import Header from './component/header/Header';
 import Footer from './component/footer/footer';
 import About from './page/about/About';
 import Home from './page/home/Home';
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Model from './page/productmodel/Model';
 import Listing from './page/Listing/Listing';
 import Cart from './page/cart/Cart';
@@ -24,9 +23,7 @@ import Checkout from './page/checkout/Checkout';
 import OrderPage from './page/cart/OrderPage';
 import UserProfile from './page/userprofile/UserProfile';
 import Thankyou from './page/cart/Thankyou';
-// import Cartcopy from './page/cart/Cartcopy';
-// import Modelcopy from './page/productmodel/Modelcopy';
-// import Slider from './page/home/slider/Sliderbar';
+import Payment from './page/cart/Payment';
 
 const myContext = createContext();
 
@@ -149,6 +146,8 @@ function App() {
           <Route exact={true} path='/order' element={<OrderPage />} />
           <Route exact={true} path='/userprofile' element={<UserProfile />} />
           <Route exact={true} path='/thankyou' element={<Thankyou />} />
+          <Route path="/payment" element={<Payment />} />
+
         </Routes>
         <Footer />
       </myContext.Provider>

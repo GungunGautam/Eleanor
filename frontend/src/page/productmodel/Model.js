@@ -92,49 +92,6 @@ function Model(props) {
   const reduxCart = useSelector(state => state.cart)
   console.log("reduxState", reduxCart)
 
-//  const addtoCart = () => {
-
-//   // 🔐 USER NOT LOGGED IN
-//   if (!isUserLogin()) {
-//     localStorage.setItem(
-//       "redirectAfterLogin",
-//       window.location.pathname
-//     );
-//     navigate('/signin');
-//     return; // ⛔ STOP HERE
-//   }
-
-//   // ✅ USER LOGGED IN → CONTINUE EXISTING LOGIC
-//   setCount(count + 1);
-//   dispatch(setCountCart(count + 1));
-
-//   if (Object.values(product).length > 0) {
-//     const cartProduct = {
-//       ...product,
-//       quantity: quantity,
-//       size: itemSize
-//     };
-
-//     const productArr = localStorage.getItem("productArr")
-//       ? localStorage.getItem("productArr")
-//       : JSON.stringify({ [email]: [cartProduct] });
-
-//     const oldProducts = JSON.parse(productArr)[email]
-//       ? JSON.parse(productArr)[email]
-//       : [];
-
-//     const newProducts = [...oldProducts, cartProduct];
-
-//     localStorage.setItem(
-//       "productArr",
-//       JSON.stringify({ [email]: newProducts })
-//     );
-
-//     console.log("Add to cart working.....");
-//   }
-// };
-
-
 const addtoCart = () => {
   // 🔐 USER NOT LOGGED IN
   if (!isUserLogin()) {

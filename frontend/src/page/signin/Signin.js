@@ -69,12 +69,21 @@ function Signin() {
           error: false,
           msg: "Login successfully"
         })
+        
+  
+
 
         setTimeout(() => {
-          window.location.href = "/"
-          // context.isLogin(true)
+  const redirectPath = localStorage.getItem("redirectAfterLogin");
 
-        }, 2000)
+  if (redirectPath) {
+    localStorage.removeItem("redirectAfterLogin");
+    window.location.href = redirectPath;
+  } else {
+    window.location.href = "/";
+  }
+}, 2000);
+
 
 
       })
@@ -102,7 +111,7 @@ function Signin() {
         <div className='container-fluid loginpage'>
           <div className='row'>
             <div className='col-md-7 signinimg'>
-              <img src='https://apiserver.seasonsindia.com/uploads/feature_images/Seasons-22-Mar-2108-01-01-01.jpg' />
+              <img src="main.jpg"/>
             </div>
 
             <div className='card'>
@@ -123,9 +132,6 @@ function Signin() {
                     </Button>
                   </div>
                 </div>
-                {/* <div className='formgroup mt-1'>
-                  <Button className='forgetpswd' style={{ color: 'rgb(135, 135, 135)', backgroundColor: 'transparent', fontSize: '14px', width: 'auto', marginLeft: '367px', borderRadius: '0px', textTransform: 'capitalize' }}>Forget Password?</Button>
-                </div> */}
                 <div className='formgroup mt-3 d-flex align-items-center justify-content-center'>
                   <Button type='submit' className='signinbtn' style={{ color: 'white', backgroundColor: 'rgb(8, 68, 77, .8)', fontSize: '18px', padding: '8px', width: '130px', borderRadius: '0px', textTransform: 'capitalize' }}>Sign In</Button>
                 </div>

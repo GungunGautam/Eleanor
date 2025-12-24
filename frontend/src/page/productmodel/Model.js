@@ -19,6 +19,9 @@ import { useLocalStorage } from '../../utils/useLocalStorage';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCountCart, updateCartAction } from '../../redux/actions';
 import Header from '../../component/header/Header';
+import { isUserLogin } from '../../utils/utils';
+import { useNavigate } from 'react-router-dom';
+
 
 function Model(props) {
 
@@ -34,6 +37,8 @@ function Model(props) {
   const [itemSize, setItemSize] = useState('S')
   const [quantity, setquantity] = useState(1)
   const email = localStorage.getItem("email")
+  const navigate = useNavigate();
+
 
   useEffect(() => {
 
@@ -48,7 +53,7 @@ function Model(props) {
 
   }, [])
 
-
+  
   const goto = (url) => {
     setzoomimage(url);
   }
@@ -67,6 +72,7 @@ function Model(props) {
 
   }, [])
 
+  
   const handleSize = (size, index) => {
 
     setactivesize(index);
@@ -86,28 +92,96 @@ function Model(props) {
   const reduxCart = useSelector(state => state.cart)
   console.log("reduxState", reduxCart)
 
-  const addtoCart = () => {
-    // context.addtoCart(id)
-    setCount(count + 1)
-    dispatch(setCountCart(count + 1))
-    // const cartProduct = { ...product, ...{ quantity: quantity }, ...{ size: itemSize } }
-    if (Object.values(product).length > 0) {
-      const cartProduct = { ...product, ...{ quantity: quantity }, ...{ size: itemSize } }
-      const productArr = localStorage.getItem("productArr") ? localStorage.getItem("productArr") : JSON.stringify({ [email]: [cartProduct] })
-      const oldProducts = JSON.parse(productArr)[email] ? JSON.parse(productArr)[email] : []
-      const newProducts = [...oldProducts, ...[cartProduct]]
-      console.log("newProducts", newProducts)
-      localStorage.setItem("productArr", JSON.stringify({ [email]: newProducts }))
-      // localStorage.setItem("cartLength")
-      console.log("Add to cart working.....")
+//  const addtoCart = () => {
 
-    }
+//   // 🔐 USER NOT LOGGED IN
+//   if (!isUserLogin()) {
+//     localStorage.setItem(
+//       "redirectAfterLogin",
+//       window.location.pathname
+//     );
+//     navigate('/signin');
+//     return; // ⛔ STOP HERE
+//   }
 
-    console.log("Add to cart working.....")
+//   // ✅ USER LOGGED IN → CONTINUE EXISTING LOGIC
+//   setCount(count + 1);
+//   dispatch(setCountCart(count + 1));
 
+//   if (Object.values(product).length > 0) {
+//     const cartProduct = {
+//       ...product,
+//       quantity: quantity,
+//       size: itemSize
+//     };
+
+//     const productArr = localStorage.getItem("productArr")
+//       ? localStorage.getItem("productArr")
+//       : JSON.stringify({ [email]: [cartProduct] });
+
+//     const oldProducts = JSON.parse(productArr)[email]
+//       ? JSON.parse(productArr)[email]
+//       : [];
+
+//     const newProducts = [...oldProducts, cartProduct];
+
+//     localStorage.setItem(
+//       "productArr",
+//       JSON.stringify({ [email]: newProducts })
+//     );
+
+//     console.log("Add to cart working.....");
+//   }
+// };
+
+
+const addtoCart = () => {
+  // 🔐 USER NOT LOGGED IN
+  if (!isUserLogin()) {
+    localStorage.setItem("redirectAfterLogin", window.location.pathname);
+    navigate('/signin');
+    return;
   }
 
+  // ✅ USER LOGGED IN → CONTINUE EXISTING LOGIC
+  setCount(count + 1);
+  dispatch(setCountCart(count + 1));
 
+  if (Object.values(product).length > 0) {
+    // 🔥 FIX: Use the actual sale price, not oldprice
+    const actualPrice = product.price || product.newprice || product.unitPrice || 0;
+    
+    const cartProduct = {
+      ...product,
+      quantity: quantity,
+      size: itemSize,
+      price: actualPrice,           // ← Current/sale price (for display in "Rate" column)
+      unitPrice: actualPrice,        // ← Same as price
+      originalPrice: actualPrice,    // ← Store original for calculations
+      oldprice: product.oldprice,    // ← Keep old price for reference (strikethrough display)
+      subTotal: actualPrice * quantity,  // ← Calculate total
+      newprice: actualPrice * quantity   // ← Same as subTotal
+    };
+
+    const productArr = localStorage.getItem("productArr")
+      ? localStorage.getItem("productArr")
+      : JSON.stringify({ [email]: [cartProduct] });
+
+    const oldProducts = JSON.parse(productArr)[email]
+      ? JSON.parse(productArr)[email]
+      : [];
+
+    const newProducts = [...oldProducts, cartProduct];
+
+    localStorage.setItem(
+      "productArr",
+      JSON.stringify({ [email]: newProducts })
+    );
+
+    console.log("Add to cart working.....");
+    console.log("Cart product:", cartProduct);
+  }
+};
 
   return (
     <>

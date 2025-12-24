@@ -65,7 +65,18 @@ function Signup() {
 
   return (
     <section className="signinpage">
-      <div className="container-fluid loginpage">
+      <div className='breadcrumbWrapper'>
+                <div className='container-fluid'>
+                  <ul class="breadcrumb breadcrumb2 mb-0">
+                    <li><Link to="/" >Home</Link></li>
+                    <li><Link>Sign In</Link></li>
+                  </ul>
+                </div>
+              </div>
+      <div className="container-fluid loginpage d-flex ">
+         <div className='col-md-7 signinimg'>
+              <img src="main.jpg"/>
+        </div>
         <div className="card">
           <h4>SIGN UP</h4>
 
@@ -76,21 +87,17 @@ function Signup() {
             <TextField label="Address" name="address" className="w-100 mt-3" onChange={onchangeInput} />
 
             <div className="mt-3 position-relative">
-              <TextField
-                label="Password"
-                name="password"
-                type={showpassword ? "text" : "password"}
-                className="w-100"
-                onChange={onchangeInput}
-              />
-              <Button onClick={() => setshowpassword(!showpassword)}>
-                <FontAwesomeIcon icon={showpassword ? faEye : faEyeSlash} />
-              </Button>
+             <TextField id="password" type={showpassword === false ? 'password' : 'text'} label="Password" name='password' className='w-100' onChange={onchangeInput} />
+                                 <Button className='visible' onClick={() => setshowpassword(!showpassword)}>
+                                   {
+                                     showpassword === false ? <FontAwesomeIcon icon={faEyeSlash} /> : <FontAwesomeIcon icon={faEye} />
+                                   }
+                                 </Button>
             </div>
-
-            <Button type="submit" className="signinbtn mt-4">
-              Sign Up
-            </Button>
+                                   <br/>
+        <div className='formgroup mt-3 d-flex align-items-center justify-content-center'>
+                  <Button type='submit' className='signinbtn' style={{ color: 'white', backgroundColor: 'rgb(8, 68, 77, .8)', fontSize: '18px', padding: '8px', width: '130px', borderRadius: '0px', textTransform: 'capitalize' }}>SignUp </Button>
+                </div>           
           </form>
 
           <p className="mt-3">

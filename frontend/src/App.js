@@ -18,7 +18,7 @@ import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 import TermsAndCondition from './page/TermsAndConditions/TermsAndCondition';
 import PrivacyPolicy from './page/privacypolicy/PrivacyPolicy';
-import Contact from './page/contactus/Contact';
+import Contact from './page/contactus/Contact.js';
 import Checkout from './page/checkout/Checkout';
 import OrderPage from './page/cart/OrderPage';
 import UserProfile from './page/userprofile/UserProfile';

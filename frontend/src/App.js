@@ -24,6 +24,7 @@ import OrderPage from './page/cart/OrderPage';
 import UserProfile from './page/userprofile/UserProfile';
 import Thankyou from './page/cart/Thankyou';
 import Payment from './page/cart/Payment';
+import Search from './page/Search/Search.js';
 
 const myContext = createContext();
 
@@ -147,6 +148,8 @@ function App() {
           <Route exact={true} path='/userprofile' element={<UserProfile />} />
           <Route exact={true} path='/thankyou' element={<Thankyou />} />
           <Route path="/payment" element={<Payment />} />
+          <Route path="/search" element={<Search />} />
+
 
         </Routes>
         <Footer />

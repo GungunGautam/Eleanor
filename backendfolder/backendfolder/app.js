@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyparser = require('body-parser');
 const app = express();
-const authjwt = require('./hepler/jwt.js');
+const authjwt = require('./helper/jwt.js');
 require('dotenv/config');
 
 

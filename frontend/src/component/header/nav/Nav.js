@@ -1,63 +1,58 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../nav/Nav.css';
 import Button from '@mui/material/Button';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faCaretDown, faHeadphonesAlt, faTableCellsLarge } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
-// import { colors } from '@mui/material';
-import { useEffect, useState } from 'react';
 import { fetchdatafromapi } from '../../../utils/Api';
-// import { useContext } from 'react';
-// import { myContext } from '../../../App';
 
-function Nav(props) {
+function Nav() {
 
-  const [productdata,  setproductdata] = useState([]);
+  const [productdata, setproductdata] = useState([]);
   const [categorydata, setcategorydata] = useState([]);
-  const navigate = useNavigate()
-  console.log("categorydata", categorydata)
-  useEffect(() => {
+  const navigate = useNavigate();
 
+  useEffect(() => {
     fetchdatafromapi('/api/category').then(res => {
       setcategorydata(res);
-    })
+    });
 
     fetchdatafromapi('/api/products?subcat=Kanjivaram_Silk').then(res => {
       setproductdata(res);
-    })
-
-  }, [])
+    });
+  }, []);
 
   return (
     <div className='nav d-flex align-items-center'>
       <div className='container-fluid'>
         <div className='row position-relative'>
-
           <div className='col-md-0 part2 d-flex align-items-center justify-content-center position-static'>
             <nav>
               <ul className='list list-inline mb-0'>
-                <li className='list-inline-item'>
-                  <Button><Link to={'/'}>Shop All</Link></Button>
-                </li>
-                {categorydata?.length > 0 &&
-  categorydata.map((item, index) => (
-    <li className='list-inline-item position-static' key={index}>
-      <Button component={Link} to={`/category/${item.name}`}>
-        {item.name}
-      </Button>
-    </li>
-  ))
-}
 
+                {/* Shop All */}
+                <li className='list-inline-item'>
+                  <Button component={Link} to="/">
+                    Shop All
+                  </Button>
+                </li>
+
+                {/* Categories */}
+                {categorydata?.length > 0 &&
+                  categorydata.map((item, index) => (
+                    <li className='list-inline-item position-static' key={index}>
+                      <Button component={Link} to={`/category/${item.name}`}>
+                        {item.name}
+                      </Button>
+                    </li>
+                  ))
+                }
 
               </ul>
             </nav>
           </div>
-
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Nav
+export default Nav;

@@ -350,7 +350,7 @@ const addtoCart = () => {
                       <div className='card p-3 reviewcard flex-row'>
                         <div className='image'>
                           <div className='round-circle'>
-                            <img src={require('../../asset/image/pexels-tomaz-barcellos-999425-1987301.jpg')} />
+                            <img src={require('../../asset/image/fallback.jpg')} />
                           </div>
                           <span className='text-g d-block text-center font-weight-bold'>Antara</span>
                         </div>

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faLocationDot, faHeart, faCartShopping, faUser, faGear, faSignOut, faMapLocation, faBars, faAddressBook, faCircleInfo, faContactCard, faPhone, faPencil, faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios';
 import Button from '@mui/material/Button';
-import { ClickAwayListener } from '@mui/base/ClickAwayListener';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Nav from "../header/nav/Nav";
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';

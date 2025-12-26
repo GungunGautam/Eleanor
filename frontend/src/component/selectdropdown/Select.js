@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import '../selectdropdown/Select.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
-import { ClickAwayListener } from '@mui/base/ClickAwayListener';
+import { ClickAwayListener } from '@mui/material/ClickAwayListener';
 
 function Select({icon}) { 
 

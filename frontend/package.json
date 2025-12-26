@@ -4,38 +4,52 @@
   "private": true,
   "proxy": "http://localhost:4000",
   "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+
+    "@mui/material": "^5.15.15",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/system": "^5.15.15",
+    "@mui/base": "^5.0.0-beta.68",
+
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+
+    "material-ui-snackbar-provider": "^2.0.0",
+
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@mui/base": "^5.0.0-beta.68",
-    "@mui/icons-material": "^6.3.1",
-    "@mui/material": "^6.3.1",
-    "@mui/styled-engine-sc": "^6.3.1",
+
     "@paypal/react-paypal-js": "^8.7.0",
+
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
-    "browser-router": "^0.2.0",
-    "material-ui-snackbar-provider": "^2.0.0",
-    "react": "^19.0.0",
     "react-bootstrap": "^2.10.7",
+
+    "browser-router": "^0.2.0",
+
     "react-click-away-listener": "^2.3.0",
-    "react-dom": "^19.0.0",
     "react-inner-image-zoom": "^3.0.2",
+
     "react-redux": "^9.2.0",
-    "react-router-dom": "^7.1.1",
-    "react-scripts": "5.0.1",
-    "react-slick": "^0.30.3",
     "redux": "^5.0.1",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^3.1.0",
+
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "5.0.1",
+
+    "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^6.1.14",
+
+    "styled-components": "^5.3.11",
     "swiper": "^11.2.1",
+
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -45,27 +59,14 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": ["react-app", "react-app/jest"]
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/preset-env": "^7.27.2",
-    "@babel/preset-react": "^7.27.1",
-    "ajv": "^7.2.4",
-    "babel-loader": "^10.0.0"
   }
 }

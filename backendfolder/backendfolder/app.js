@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -6,6 +7,7 @@ const app = express();
 const authjwt = require('./helper/jwt.js');
 require('dotenv/config');
 
+app.use(express.json());
 
 app.use(cors());
 app.options('*', cors());
@@ -29,6 +31,17 @@ app.use(`/api/productsize`, productsizeroutes);
 app.use(`/api/user`, userroutes);
 app.use(`/api/cart`, cart); 
 
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
+
+
 //database
 mongoose.connect(process.env.CONNECTION, {
     useNewUrlParser: true,
@@ -39,6 +52,7 @@ mongoose.connect(process.env.CONNECTION, {
     app.listen(process.env.PORT, () => {
         console.log('server is running on port ' + process.env.PORT);
     })
+
 }).catch((err) => {
     console.log(err);
 })

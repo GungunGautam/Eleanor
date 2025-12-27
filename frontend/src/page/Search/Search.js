@@ -25,7 +25,7 @@ function Search() {
 
     const fetchProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:4000/api/products');
+        const res = await axios.get('/api/products');
         if (isMounted && Array.isArray(res.data)) {
           setAllProducts(res.data);
         }

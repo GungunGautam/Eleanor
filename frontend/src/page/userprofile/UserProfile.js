@@ -35,7 +35,6 @@ console.log("user", user)
             const user = data.filter(u => u.email === email)
             console.log('user', user, data)
             setuser(user[0]);
-            // console.log(res);
           })
 
         
@@ -57,9 +56,7 @@ console.log("user", user)
                                     Name : 
                                     <TextField id="outlined-basic1" placeholder="Enter Full Name" variant="outlined" className='w-100' value={user?.name} onChange={handleChange} name="name" />
                                 </div>
-                                {/* <div className='form-group mb-3'>
-                                    <TextField id="outlined-basic" label="Enter Pincode" variant="outlined" className='w-100' value={formFields.email} onChange={handleChange} name="pincode" />
-                                </div> */}
+                              
                                 <div className='form-group mb-3'>
                                     Phone : 
                                     <TextField id="outlined-basic2" placeholder="Enter Phone Number." variant="outlined" className='w-100' value={user?.phone} onChange={handleChange} name="phone" />

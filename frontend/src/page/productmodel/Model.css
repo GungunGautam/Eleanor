@@ -96,28 +96,48 @@ ul.breadcrumb li a:hover {
 
 .productzoom {
   height: 720px;
-  width: 550px;  
-  border: 2px solid rgb(8, 68, 77,.4);
+  width: 550px;
+  border: 2px solid rgb(8, 68, 77, 0.4);
   overflow: hidden;
 }
-.productzoom img {
+
+/* MAIN DISPLAY IMAGE ONLY */
+.productzoom .iiz__img {
   height: 100% !important;
   width: 100% !important;
-  /* border-radius: 10px; */
+  object-fit: contain;
+  cursor: zoom-in;
 }
 
+/* ZOOMED IMAGE (VERY IMPORTANT FIX) */
+.productzoom .iiz__zoom-img {
+  object-fit: cover !important;
+  background-color: transparent !important;
+}
+
+/* STOP ZOOM CONTAINER FROM BREAKING UI */
+.productzoom .iiz__zoom-container {
+  inset: 0 !important;
+  overflow: hidden !important;
+}
+
+/* THUMBNAILS — UNCHANGED */
 .zoomimages .item {
   border: 2px solid transparent;
   height: 120px !important;
   width: 90px !important;
   padding-bottom: 5px;
   overflow: hidden;
-  /* border-radius: 10px; */
 }
+
 .zoomimages .item img {
   height: 100% !important;
   width: 100% !important;
+  object-fit: cover;
+  cursor: pointer;
 }
+
+
 
 .detailpage .productinfo .addcartsection {
   height: auto;

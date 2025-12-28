@@ -175,12 +175,20 @@ const addtoCart = () => {
                 </div>
 
                 <div className='col-md-5 mt-5'>
-                  <div className='productzoom'>
-
-                    {/* <InnerImageZoom src={${zoomimage}_${bigimagesize[0]}x${bigimagesize[0]}} zoomType='hover' zoomScale={1} /> */}
-                    <img src={`${zoomimage}`} zoomtype='hover' zoomscale={1} />
-
-                  </div>
+                  <div className="productzoom">
+                  {zoomimage && (
+                    <InnerImageZoom
+                      src={zoomimage}
+                      zoomSrc={zoomimage}
+                      zoomType="hover"
+                      zoomScale={1.3}
+                      zoomPreload={true}
+                      hideHint={true}
+                      className="zoom-img"
+                      alt={product?.name}
+                    />
+                  )}
+              </div>
                 </div>
 
                 <div className='col-md-6 mt-5 productinfo'>
@@ -409,3 +417,5 @@ const addtoCart = () => {
 }
 
 export default Model
+
+
